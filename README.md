@@ -14,7 +14,7 @@ This document contains the following details:
 ### Description of the Topology
 This repository includes code defining the infrastructure below. 
 
-![](https://github.com/dpiliae/Cybersecurity-Bootcamp/blob/main/Diagrams/Cloud-Diagram.png?raw=true)
+![](https://github.com/dpiliae/Cybersecurity-Bootcamp/blob/main/Diagrams/2022-08-14%2017_02_17-Hoomework%20WK%2012.drawio%20-%20diagrams.net.png?raw=true)
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the "D*mn Vulnerable Web Application"
 
