@@ -24,12 +24,12 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 
 The configuration details of each machine may be found below.
 
-| Name     |   Function  | IP Address | Operating System |
-|----------|-------------|------------|------------------|
-| Jump Box | Gateway     | 10.0.0.7   | Linux            |
-| DVWA 1   | Web Server  | 10.0.0.10  | Linux            |
-| DVWA 2   | Web Server  | 10.0.0.11  | Linux            |
-| ELK      | Monitoring  | 10.2.0.4   | Linux            |
+| Name     |   Function  | IP Address  | Operating System |
+|----------|-------------|-------------|------------------|
+| Jump Box | Gateway     | 10.10.0.4   | Linux            |
+| DVWA 1   | Web Server  | 10.10.0.5   | Linux            |
+| DVWA 2   | Web Server  | 10.10.0.6   | Linux            |
+| ELK      | Monitoring  | 10.10.0.7   | Linux            |
 
 In addition to the above, Azure has provisioned a **load balancer** in front of all machines except for the jump box. The load balancer's targets are organized into the following availability zones:
 - **Availability Zone 1**: DVWA 1 + DVWA 2
@@ -46,8 +46,8 @@ To use this playbook, one must log into the Jump Box, then issue: `ansible-playb
 ### Access Policies
 The machines on the internal network are _not_ exposed to the public Internet. 
 
-Only the **jump box** machine can accept connections from the Internet. Access to this machine is only allowed from the IP address `104.40.2.245`
-- **Note**: _Your answer will be different!_
+Only the **jump box** machine can accept connections from the Internet. Access to this machine is only allowed from the IP address `183.95.201.86`
+
 
 Machines _within_ the network can only be accessed by **each other**. The DVWA 1 and DVWA 2 VMs send traffic to the ELK server.
 
@@ -55,10 +55,10 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes                 | 104.40.2.245         |
-| ELK      | No                  | 10.2.0.4-254         |
-| DVWA 1   | No                  | 10.0.0.10-254        |
-| DVWA 2   | No                  | 10.0.0.11-254        |
+| Jump Box | Yes                 | 183.95.201.86        |
+| ELK      | No                  | 10.10.0.7            |
+| DVWA 1   | No                  | 10.10.0.5            |
+| DVWA 2   | No                  | 10.10.0.6            |
 
 ### Elk Configuration
 
@@ -211,7 +211,7 @@ $ cat > hosts <<EOF
 10.0.0.6
 
 [elk]
-10.0.0.8
+10.0.0.7
 EOF
 ```
 
@@ -226,7 +226,7 @@ After this, the commands below run the playbook:
 
 To verify success, wait five minutes to give ELK time to start up. 
 
-Then, run: `curl http://10.0.0.8:5601`. This is the address of Kibana. If the installation succeeded, this command should print HTML to the console.
+Then, run: `curl http://10.0.0.7:5601`. This is the address of Kibana. If the installation succeeded, this command should print HTML to the console.
 
 
 ---
