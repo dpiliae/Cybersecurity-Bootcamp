@@ -133,7 +133,7 @@ The playbook is duplicated below.
 ```
 
 ### Target Machines & Beats
-This ELK server is configured to monitor the DVWA 1 and DVWA 2 VMs, at `10.0.0.10` and `10.0.0.11`, respectively.
+This ELK server is configured to monitor the DVWA 1 and DVWA 2 VMs, at `10.0.0.5` and `10.0.0.6`, respectively.
 
 We have installed the following Beats on these machines:
 - Filebeat
